@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { useParams, useRouter } from "next/navigation";
 import { useOrderTracking } from "@/hooks/useOrderTracking";
 import { Loading } from "@/components/ui/Loading";
-import { Error } from "@/components/ui/Error";
+import { Error as ErrorMessage } from "@/components/ui/Error";
 import { TrackingHeader } from "@/components/tracking/TrackingHeader";
 import { OrderStatus } from "@/components/tracking/OrderStatus";
 import { OrderTimeline } from "@/components/tracking/OrderTimeline";
@@ -39,7 +39,7 @@ export default function TrackPage() {
   }
 
   if (error || !order) {
-    return <Error title="Tracking failed" message={error || "Order not found."} />;
+    return <ErrorMessage title="Tracking failed" message={error || "Order not found."} />;
   }
 
   return (

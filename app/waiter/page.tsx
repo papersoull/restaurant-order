@@ -6,7 +6,7 @@ import { DashboardLayout } from "@/components/ui/DashboardLayout";
 import { DashboardHeader } from "@/components/ui/DashboardHeader";
 import { StatCard } from "@/components/ui/StatCard";
 import { Loading } from "@/components/ui/Loading";
-import { Error } from "@/components/ui/Error";
+import { Error as ErrorMessage } from "@/components/ui/Error";
 
 interface ServedOrder {
   id: string;
@@ -67,7 +67,7 @@ export default function WaiterDashboard() {
     return (
       <DashboardLayout>
         <DashboardHeader title="Waiter Dashboard" description="Service Station" />
-        <Error title="Waiter Dashboard Error" message={error} />
+        <ErrorMessage title="Waiter Dashboard Error" message={error} />
       </DashboardLayout>
     );
   }

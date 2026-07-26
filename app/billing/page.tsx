@@ -3,7 +3,7 @@
 import React from "react";
 import { useBilling } from "@/hooks/useBilling";
 import { Loading } from "@/components/ui/Loading";
-import { Error } from "@/components/ui/Error";
+import { Error as ErrorMessage } from "@/components/ui/Error";
 
 export default function BillingDashboard() {
   const { servedOrders, billedOrders, bills, isLoading, error, generateBill } = useBilling();
@@ -22,7 +22,7 @@ export default function BillingDashboard() {
     return (
       <main className="min-h-screen bg-soft-milk px-4 py-6 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-7xl">
-          <Error title="Billing Dashboard Error" message={error} />
+          <ErrorMessage title="Billing Dashboard Error" message={error} />
         </div>
       </main>
     );

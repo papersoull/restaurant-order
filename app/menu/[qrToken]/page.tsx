@@ -12,7 +12,7 @@ import { CategoryTabs } from "@/components/menu/CategoryTabs";
 import { MenuGrid } from "@/components/menu/MenuGrid";
 import { MenuSkeleton } from "@/components/menu/MenuSkeleton";
 import { Loading } from "@/components/ui/Loading";
-import { Error } from "@/components/ui/Error";
+import { Error as ErrorMessage } from "@/components/ui/Error";
 
 export default function MenuPage() {
   const params = useParams();
@@ -101,11 +101,11 @@ export default function MenuPage() {
   }
 
   if (tableError) {
-    return <Error title="Invalid QR Code" message={tableError} />;
+    return <ErrorMessage title="Invalid QR Code" message={tableError} />;
   }
 
   if (error) {
-    return <Error title="Menu Load Failed" message={error} />;
+    return <ErrorMessage title="Menu Load Failed" message={error} />;
   }
 
   return (

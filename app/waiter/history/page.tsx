@@ -4,7 +4,7 @@ import React, { useState, useEffect, useCallback } from "react";
 import { Pagination } from "@/components/ui/Pagination";
 import { DateFilter } from "@/components/ui/DateFilter";
 import { Loading } from "@/components/ui/Loading";
-import { Error } from "@/components/ui/Error";
+import { Error as ErrorMessage } from "@/components/ui/Error";
 
 interface WaiterOrderHistory {
   id: string;
@@ -207,7 +207,7 @@ export default function WaiterHistoryPage() {
         {isLoading ? (
           <Loading />
         ) : error ? (
-          <Error title="Failed to Load History" message={error || ""} />
+          <ErrorMessage title="Failed to Load History" message={error || ""} />
         ) : orders.length === 0 ? (
           <div className="rounded-3xl border border-dashed border-cream bg-white/50 p-12 text-center shadow-sm">
             <p className="text-lg font-medium text-muted-beige">No served orders found</p>

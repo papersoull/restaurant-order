@@ -3,7 +3,7 @@
 import React from "react";
 import { useAdmin } from "@/hooks/useAdmin";
 import { Loading } from "@/components/ui/Loading";
-import { Error } from "@/components/ui/Error";
+import { Error as ErrorMessage } from "@/components/ui/Error";
 
 const statusLabels: Record<string, string> = {
   placed: "Placed",
@@ -38,7 +38,7 @@ export default function AdminDashboard() {
     return (
       <main className="min-h-screen bg-soft-milk px-4 py-6 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-7xl">
-          <Error title="Admin Dashboard Error" message={error || "Failed to load analytics"} />
+          <ErrorMessage title="Admin Dashboard Error" message={error || "Failed to load analytics"} />
         </div>
       </main>
     );

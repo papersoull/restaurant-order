@@ -6,7 +6,7 @@ import { DashboardLayout } from "@/components/ui/DashboardLayout";
 import { DashboardHeader } from "@/components/ui/DashboardHeader";
 import { StatCard } from "@/components/ui/StatCard";
 import { Loading } from "@/components/ui/Loading";
-import { Error } from "@/components/ui/Error";
+import { Error as ErrorMessage } from "@/components/ui/Error";
 
 interface CompletedOrder {
   id: string;
@@ -84,7 +84,7 @@ export default function ChefDashboard() {
     return (
       <DashboardLayout>
         <DashboardHeader title="Chef Dashboard" description="Kitchen Display System" />
-        <Error title="Chef Dashboard Error" message={error} />
+        <ErrorMessage title="Chef Dashboard Error" message={error} />
       </DashboardLayout>
     );
   }
